@@ -29,21 +29,22 @@ S3 bucket is used by kubernetes to persist cluster state, lets create s3 bucket 
 ## 6. Configure environment variables.
 Open .bashrc file
 
-	vi ~/.bashrc
+```	vi ~/.bashrc  ````
 Add following content into .bashrc, you can choose any arbitary name for cluster and make sure buck name matches the one you created in previous step.
 ```
 export KOPS_CLUSTER_NAME=devopskops.k8s.local
 export KOPS_STATE_STORE=s3://devopskops.k8s.in
 ```
 Then running command to reflect variables added to .bashrc
-
-	source ~/.bashrc
+``` ource ~/.bashrc  ```
+	
 ## 7. Create ssh key pair
 This keypair is used for ssh into kubernetes cluster
 
 ``` ssh-keygen ```
 ## 8. Create a Kubernetes cluster definition.
-```kops create cluster \
+```
+kops create cluster \
 --state=${KOPS_STATE_STORE} \
 --node-count=2 \
 --master-size=t3.medium \
