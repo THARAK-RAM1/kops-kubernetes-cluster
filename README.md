@@ -79,3 +79,47 @@ After editing instancegrous apply below command
 ## 11. Destroy the kubernetes cluster
 ``` kops delete cluster --name devopskops.k8s.local --yes ```
 
+
+
+# Installing Grapaha,Kubernetes-dashboard and Prometheus in kops kubernetes cluster
+
+## 1. Install git 
+```
+sudo yum install git -y 
+```
+
+## 2. Clone Repository
+```
+git clone https://github.com/THARAK-RAM1/kops-kubernetes-cluster 
+```
+## 3. Change to kops-kubernetes-cluster directory
+```
+cd kops-kubernetes-cluster
+```
+
+## 4. Install kubernetes-dashboard
+```
+kubectl create -f kubernetes-dashboard/
+```
+
+## 5. Install Prometheus
+```
+kubectl create -f prometheus
+```
+
+## 6. Install Node exporter 
+```
+kubectl create -f nodeexporter
+```
+
+## 7. Install Graphana
+```
+kubectl create -f grafana
+```
+
+All services have been created 
+You can list kubernetes using 
+```
+kubectl get svc -A
+```
+Now you can access the required service with it's <loadbalancer ip>:<port>
