@@ -41,7 +41,10 @@ Then running command to reflect variables added to .bashrc
 ## 7. Create ssh key pair
 This keypair is used for ssh into kubernetes cluster
 
-``` ssh-keygen ```
+``` ssh-keygen 
+kops create secret --name devopskops.k8s.local sshpublickey admin -i ~/.ssh/id_rsa.pub
+```
+
 ## 8. Create a Kubernetes cluster definition.
 ```
 kops create cluster \
@@ -60,12 +63,17 @@ Above command may take some time to create the required infrastructure resources
 ``` kops validate cluster ```
 For the above above command, you might see validation failed error initially when you create cluster and it is expected behaviour, you have to wait for some more time and check again.
 
-## 10. Destroy the kubernetes cluster
-``` kops delete cluster  --yes ```
-Update Nodes and Master in the cluster
+## 10. Update Nodes and Master in the cluster
 We can change numner of nodes and number of masters using following commands
 
+we can list kops instances using
+``` kops get instances ```
+and instancegroups using
+``` kops get instancegroups ```
    kops edit ig nodes change minSize and maxSize to 0
    kops get ig- to get master node name
    kops edit ig - change min and max size to 0
    kops update cluster --yes
+## 11. Destroy the kubernetes cluster
+``` kops delete cluster --name devopskops.k8s.local --yes ```
+
