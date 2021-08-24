@@ -24,7 +24,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ## 5. Create S3 bucket in AWS
 S3 bucket is used by kubernetes to persist cluster state, lets create s3 bucket using aws cli Note: Make sure you choose bucket name that is unique accross all aws accounts
 
-aws s3 mb s3://devopskops.in.k8s --region ap-south-1
+``` aws s3 mb s3://devopskops.in.k8s --region ap-south-1 ```
 
 ## 6. Configure environment variables.
 Open .bashrc file
@@ -33,7 +33,7 @@ Open .bashrc file
 Add following content into .bashrc, you can choose any arbitary name for cluster and make sure buck name matches the one you created in previous step.
 ```
 export KOPS_CLUSTER_NAME=devopskops.k8s.local
-export KOPS_STATE_STORE=s3://javahome.in.k8s
+export KOPS_STATE_STORE=s3://devopskops.k8s.in
 ```
 Then running command to reflect variables added to .bashrc
 
