@@ -68,12 +68,14 @@ We can change numner of nodes and number of masters using following commands
 
 we can list kops instances using
 ``` kops get instances ```
+
 and instancegroups using
 ``` kops get instancegroups ```
-   kops edit ig nodes change minSize and maxSize to 0
-   kops get ig- to get master node name
-   kops edit ig - change min and max size to 0
-   kops update cluster --yes
+
+```   kops edit ig <instancegroup-name> ```  it will open vi editor you can change values based on your requirements
+After editing instancegrous apply below command
+	
+ ```  kops update cluster --yes  ```
 ## 11. Destroy the kubernetes cluster
 ``` kops delete cluster --name devopskops.k8s.local --yes ```
 
