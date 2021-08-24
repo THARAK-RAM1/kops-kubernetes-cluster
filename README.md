@@ -81,7 +81,7 @@ After editing instancegrous apply below command
 
 
 
-# Installing Grapaha,Kubernetes-dashboard and Prometheus in kops kubernetes cluster
+# Installing Grafana,Kubernetes-dashboard and Prometheus in kops kubernetes cluster
 
 ## 1. Install git 
 ```
@@ -122,4 +122,6 @@ You can list kubernetes using
 ```
 kubectl get svc -A
 ```
-Now you can access the required service with it's <loadbalancer ip>:<port>
+Now you can access the required service with it's loadbalancer ip:port
+	
+	
