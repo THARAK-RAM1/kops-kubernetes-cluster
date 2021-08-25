@@ -17,4 +17,9 @@ password - admin
 
 Then Create new password
 
-Authenticated successfully , you can now use Grafana for Metric visualisatio
+Authenticated successfully , you can now use Grafana for Metric visualisation
+
+
+## 4.Add prometheus as a data source
+Grafana is just a metric visualization tool it does't know where your metrics are stored so you need to add prometheus as a data source for retrieving metric from prometheus
+Add prometheus url in Grafana data source 
