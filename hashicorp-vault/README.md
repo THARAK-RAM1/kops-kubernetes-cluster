@@ -46,3 +46,9 @@ vault operator init
 vault operator unseal
 ```
 execute this 3 times and paste your 3 different keys
+
+## 9. Vault Login
+```
+vault login
+```
+Then paste your vault token
