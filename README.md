@@ -36,7 +36,9 @@ export KOPS_CLUSTER_NAME=devopskops.k8s.local
 export KOPS_STATE_STORE=s3://devopskops.k8s.in
 ```
 Then running command to reflect variables added to .bashrc
-``` ource ~/.bashrc  ```
+``` 
+source ~/.bashrc 
+```
 	
 ## 7. Create ssh key pair
 This keypair is used for ssh into kubernetes cluster
@@ -118,7 +120,7 @@ kubectl create -f grafana/
 ```
 
 All services have been created 
-You can list kubernetes using 
+You can list kubernetes services using 
 ```
 kubectl get svc -A
 ```
