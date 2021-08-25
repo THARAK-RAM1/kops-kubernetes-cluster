@@ -104,17 +104,17 @@ kubectl create -f kubernetes-dashboard/
 
 ## 5. Install Prometheus
 ```
-kubectl create -f prometheus
+kubectl create -f prometheus/
 ```
 
 ## 6. Install Node exporter 
 ```
-kubectl create -f nodeexporter
+kubectl create -f nodeexporter/
 ```
 
 ## 7. Install Graphana
 ```
-kubectl create -f grafana
+kubectl create -f grafana/
 ```
 
 All services have been created 
